@@ -4,7 +4,10 @@
   "description": "Simple Modern-looking Event Calendar",
   "main": "evo-calendar/js/evo-calendar.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:js": "npx minify ./evo-calendar/js/evo-calendar.js > ./evo-calendar/js/evo-calendar.min.js",
+    "build:css":"npx minify ./evo-calendar/css/evo-calendar.ris-cur.css > ./evo-calendar/css/evo-calendar.ris-cur.min.css",
+    "build": "npm run build:js && npm run build:css" 
   },
   "repository": {
     "type": "git",
@@ -26,5 +29,8 @@
   "homepage": "https://github.com/edlynvillegas/evo-calendar#readme",
   "dependencies": {
     "jquery": ">=1.8.0"
+  },
+  "devDependencies": {
+    "minify": "^9.1.0"
   }
 }
