@@ -41,10 +41,11 @@
         sidebarToggler: true,
         eventDisplayDefault: true,
         eventListToggler: true,
-        calendarEvents: null
+        calendarEvents: null,
+        eventsByCount: false,
+        limitDescription: 0
       };
       _.options = $.extend({}, _.defaults, settings);
-
       _.initials = {
         default_class: $(element)[0].classList.value,
         validParts: /dd?|DD?|mm?|MM?|yy(?:yy)?/g,
@@ -211,7 +212,7 @@
         activeMonthEl: null,
         activeYearEl: null
       }
-      console.log('initialize', _.$elements.calendarEl)
+
       _.$breakpoints = {
         tablet: 768,
         mobile: 425
@@ -807,8 +808,7 @@
       if (thisDate.find('span.event-indicator').length === 0) {
         thisDate.append('<span class="event-indicator"></span>');
       }
-
-      if (thisDate.find('span.event-indicator > .type-bullet > .type-' + type).length === 0) {
+      if (thisDate.find('span.event-indicator > .type-bullet > .type-' + type).length === 0 || _.options.eventsByCount ) {
         htmlToAppend = '<div class="type-bullet"><div ';
 
         htmlToAppend += 'class="type-' + event.type + '"'

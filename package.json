@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:js": "npx minify ./evo-calendar/js/evo-calendar.js > ./evo-calendar/js/evo-calendar.min.js",
     "build:css":"npx minify ./evo-calendar/css/evo-calendar.ris-cur.css > ./evo-calendar/css/evo-calendar.ris-cur.min.css",
-    "build": "npm run build:js && npm run build:css" 
+    "build:base-css":"npx minify ./evo-calendar/css/evo-calendar.css > ./evo-calendar/css/evo-calendar.min.css",
+    "build": "npm run build:js && npm run build:base-css && npm run build:css",
+    "cp" : "npm run build && xcopy .\\evo-calendar\\* ..\\ris3_source\\evocal\\ /S /Y"
   },
   "repository": {
     "type": "git",

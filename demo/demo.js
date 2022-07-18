@@ -18,9 +18,14 @@ var events = [ {
     id: "0g5G6ja",
     name: "Event #1",
     description: "Lorem ipsum dolor sit amet.",
-    date: [ today.getMonth() + 1 + "/2/" + today.getFullYear(), today.getMonth() + 1 + "/5/" + today.getFullYear() ],
+    date: [ today.getMonth() + 1 + "/2/" + today.getFullYear(), today.getMonth() + 1 + "/2/" + today.getFullYear() ],
     type: "event",
-    everyYear: !0
+}, {
+    id: "0g5G6jx",
+    name: "Event #99",
+    description: "Lorem ipsum dolor sit amet.",
+    date: [ today.getMonth() + 1 + "/2/" + today.getFullYear(), today.getMonth() + 1 + "/2/" + today.getFullYear() ],
+    type: "event",
 }, {
     id: "y2u7UaF",
     name: "Holiday #3",
@@ -73,33 +78,8 @@ $(document).ready(function() {
     $("#demoEvoCalendar").evoCalendar({
         format: "MM dd, yyyy",
         titleFormat: "MM",
-        calendarEvents: [{
-            id: "d8jai7s",
-            name: "Author's Birthday",
-            description: "Author's note: Thank you for using EvoCalendar! :)",
-            date: "February/15/1999",
-            type: "birthday",
-            everyYear: !0
-        }, {
-            id: "sKn89hi",
-            name: "1-Week Coding Bootcamp",
-            description: "Lorem ipsum dolor sit amet.",
-            badge: "5-day event",
-            date: [ today.getMonth() + 1 + "/" + week_date.start + "/" + today.getFullYear(), today.getMonth() + 1 + "/" + week_date.end + "/" + today.getFullYear() ],
-            type: "event",
-            everyYear: !0
-        }, {
-            id: "in8bha4",
-            name: "Holiday #2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            date: today,
-            type: "holiday"
-        }, {
-            id: "in8bha4",
-            name: "Event #2",
-            date: today,
-            type: "event"
-        }]
+        eventsByCount: true,
+        calendarEvents: events
     });
     $("[data-set-theme]").click(function(b) {
         a(b.target);
